@@ -21,7 +21,7 @@ const StockForecast = () => {
 
   const handleForecast = (event) => {
     setLoading(true);
-    axios.post('http://localhost:5000/forecast-stock', JSON.stringify({ ticker, days }), { headers: { 'Content-Type': 'application/json' } })
+    axios.post('/api/forecast-stock', JSON.stringify({ ticker, days }), { headers: { 'Content-Type': 'application/json' } })
       .then(res => {
         setLoading(false);
         setImageBase64(res.data.image_base64);
@@ -35,12 +35,9 @@ const StockForecast = () => {
   };
 
   const handleSubmit = (event) => {
+    // To prevent a browser reload/refresh
     event.preventDefault();
-    // Handle form submission logic here (e.g., send data to an API)
     console.log('Submitted ticker:', ticker);
-    // Reset the form
-    // setTicker('AAPL');
-    // setDays(30)
   };
 
   return (
@@ -66,7 +63,7 @@ const StockForecast = () => {
               Wecome to Stock/Crypto Forecaster
             </Typography>
             <IconButton
-              href="https://github.com/mui"
+              href="https://github.com/albertlevinb/Stock-Forecast.git"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"

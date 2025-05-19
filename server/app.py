@@ -24,11 +24,11 @@ def serve_static(path):
     else:
         return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/forecast-stock', methods=['POST'])
+@app.route('/api/forecast-stock', methods=['POST'])
 def forecast_stock():
     data = request.get_json()
-    ticker = data.get('ticker', 'AAPL')
-    days = int(data.get('days', 30))
+    ticker = data.get('ticker', 'TSLA')
+    days = int(data.get('days', 90))
 
     df = yf.download(ticker, period="1y", interval="1d", group_by='ticker', auto_adjust=False).reset_index()
 
