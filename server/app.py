@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
 import matplotlib
 # Agg is a non-interactive backend that renders to image buffers, not the screen.
 # It's thread-safe and works well in Flask, FastAPI, etc
@@ -12,6 +13,7 @@ import io
 import base64
 
 app = Flask(__name__, static_folder='../client/build', static_url_path='')
+CORS(app)
 
 @app.route('/')
 def serve_index():
