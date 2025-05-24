@@ -16,6 +16,7 @@ app = Flask(__name__, static_folder='../client/build', static_url_path='')
 CORS(app)
 
 @app.route('/')
+@app.route('/stock-forecast')
 def serve_index():
     return send_from_directory(app.static_folder, 'index.html')
 
