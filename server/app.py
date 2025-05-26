@@ -27,11 +27,11 @@ def serve_static(path):
     else:
         return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/api/forecast-stock', methods=['POST'])
+@app.route('/forecast-stock', methods=['POST'])
 def forecast_stock():
     data = request.get_json()
     ticker = data.get('ticker', 'AAPL')
-    days = int(data.get('days', 90))
+    days = int(data.get('days', 365))
 
     df = yf.download(ticker, period="1y", interval="1d", group_by='ticker', auto_adjust=False).reset_index()
 
@@ -124,6 +124,27 @@ def forecast_stock():
     #base64 encoded image
     img_base64 = base64.b64encode(buf.read()).decode('utf-8')
     return jsonify({'image_base64': img_base64})
+
+@app.route('/stock-data', methods=['POST'])
+def get_data():
+    data = request.get_json()
+    ticker = data.get('ticker', 'AAPL')
+    df = yf.download(ticker, period="1y", interval="1d", group_by='ticker', auto_adjust=False)
+
+    # Flatten the MultiIndex columns
+    # This is crucial for single-ticker downloads with group_by='ticker'
+    df.columns = df.columns.droplevel(level=0)
+
+    # Convert the datetime index to a string format 'YYYY-MM-DD'
+    # This is the key step to get the date string as the JSON key
+    df.index = df.index.strftime('%Y-%m-%d')
+
+    # Select the desired columns
+    df_json = df[['Open', 'High', 'Low', 'Close', 'Adj Close', 'Volume']]
+
+    # Convert to JSON
+    json_output = df_json.to_json(orient="index", indent=4)
+    return json_output
 
 if __name__ == "__main__":
     app.run(debug=True)
