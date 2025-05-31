@@ -19,12 +19,14 @@ const StockForecast = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [chartData, setChartData] = useState(null);
+  const [aiResponse, setAiResponse] = useState(null);
 
   const days = 90;
 
   const handleForecast = (event) => {
     setLoading(true);
     setChartData(null);
+    setAiResponse(null);
     axios.post('/forecast-stock', JSON.stringify({ ticker, days }), { headers: { 'Content-Type': 'application/json' } })
       .then(res => {
         setLoading(false);
@@ -41,6 +43,7 @@ const StockForecast = () => {
   const handleChart = (event) => {
     setLoading(true);
     setImageBase64(null);
+    setAiResponse(null);
     axios.post('/stock-data', JSON.stringify({ ticker }), { headers: { 'Content-Type': 'application/json' } })
       .then(res => {
         setLoading(false);
@@ -67,6 +70,24 @@ const StockForecast = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+  };
+
+  const getAdvice = async () => {
+    setLoading(true);
+    setImageBase64(null);
+    setChartData(null);
+    try {
+      const res = await axios.post("/openapi", {
+        ticker,
+      });
+      setLoading(false);
+      setAiResponse(res.data.response);
+
+    } catch (err) {
+      console.error(err);
+      setLoading(false);
+      setAiResponse("Failed to get advice.");
+    }
   };
 
   return (
@@ -123,18 +144,21 @@ const StockForecast = () => {
               type="ticker"
               required
               value={ticker}
-              onChange={(e) => { setTicker(e.target.value); setError(null); setChartData(null); }}
+              onChange={(e) => { setTicker(e.target.value); setError(null); setChartData(null); setAiResponse(null); }}
               sx={{ mr: 2 }}
             />
-            <Button type="submit" variant="contained" color="primary" onClick={handleForecast} style={{ marginRight: '16px' }}>
-              Stock Forecast
+            <Button type="submit" variant="contained" color="primary" onClick={handleForecast} style={{ marginRight: '10px' }}>
+              Forecast
             </Button>
-            <Button type="submit" variant="contained" color="primary" onClick={handleChart}>
-              Stock Chart
+            <Button type="submit" variant="contained" color="primary" onClick={handleChart} style={{ marginRight: '10px' }} >
+              Chart
+            </Button>
+            <Button type="submit" variant="contained" color="primary" onClick={getAdvice}>
+              AI Advice
             </Button>
           </Box>
         </Container>
-      </Box>
+      </Box >
 
       <Box
         sx={{
@@ -180,8 +204,26 @@ const StockForecast = () => {
         >
           The ticker symbol {ticker} is invalid or a network error occurred
         </Typography>}
+        {aiResponse && <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            mt: 4,
+          }}
+        ><Box
+          sx={{
+            width: '50%',
+            mt: 2,
+            p: 2,
+            border: '2px solid #ccc',
+            borderRadius: 2,
+            bgcolor: '#eeeeee',
+          }}
+        >
+            <Typography variant="body1">{aiResponse}</Typography>
+          </Box></Box>}
       </Box>
-    </div>
+    </div >
   );
 }
 

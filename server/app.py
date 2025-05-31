@@ -11,9 +11,15 @@ from prophet import Prophet
 import pandas as pd
 import io
 import base64
+from openai import OpenAI
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__, static_folder='../client/build', static_url_path='')
 CORS(app)
+
+load_dotenv()  # loads from .env file
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 @app.route('/')
 @app.route('/stock-forecast')
@@ -145,6 +151,24 @@ def get_data():
     # Convert to JSON
     json_output = df_json.to_json(orient="index", indent=4)
     return json_output
+
+@app.route('/openapi', methods=['POST'])
+def get_openai_response():
+    data = request.get_json()
+    ticker = data.get('ticker', 'AAPL')
+
+    try:
+        response = client.chat.completions.create(
+            # model="gpt-4",  # or "gpt-3.5-turbo"
+            model = "gpt-4.1-mini",
+            messages=[{"role": "user", "content": f"Give me a short analysis of {ticker}'s recent market performance and investor sentiment."}]
+        )
+        message = response.choices[0].message.content
+        return jsonify({'response': message})
+
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
