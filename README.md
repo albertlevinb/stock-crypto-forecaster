@@ -2,8 +2,7 @@
 
 ## Overview
 
-**Stock Crypto Forecaster** is a full-stack web application that predicts future stock and cryptocurrency prices using Facebook Prophet — a powerful time series forecasting library developed by Meta. The app fetches historical market data, displays interactive performance charts, and generates future forecasts to support data-driven financial decisions.  
-**Now with ChatGPT integration for personalized AI-powered financial advice and insights.**
+**Stock Crypto Forecaster** is a full-stack web application that predicts future stock and cryptocurrency prices using Facebook Prophet — a powerful time series forecasting library developed by Meta. The app fetches historical market data, displays interactive performance charts, and generates future forecasts to support data-driven financial decisions. Now with ChatGPT integration for personalized AI-powered financial advice and insights.
 
 ## Features
 
