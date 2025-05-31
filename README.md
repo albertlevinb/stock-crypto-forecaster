@@ -1,4 +1,4 @@
-# Stock Crypto Forecaster (with Facebook Prophet & ChatGPT AI Advice)
+# Stock Crypto Forecaster
 
 ## Overview
 
