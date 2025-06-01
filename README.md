@@ -31,4 +31,5 @@
 - **D3.js** – dynamic charting for historical stock/crypto prices  
 
 ### Deployment
-- **NGINX** – serves the React frontend and proxies API requests to the Flask backend for seamless production deployment  
+- **NGINX** – Serves the React frontend and proxies API requests to the Flask backend for seamless production deployment  
+- **AWS EC2 Instance** – Hosts the full application stack, including the Flask API, React frontend, and NGINX reverse proxy  
