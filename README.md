@@ -12,7 +12,21 @@
 - Cleans and formats time series data for modeling  
 - Visualizes forecasts with Matplotlib  
 - Integrates OpenAI API to provide AI-generated market insights and investment advice  
-- Responsive frontend with real-time updates and error handling  
+- Responsive frontend with real-time updates and error handling
+
+## Screenshots
+
+### 1. Forecast Visualization
+Generates future stock or crypto price forecasts using Facebook Prophet, rendered with Matplotlib.
+![Screenshot 2025-06-05 at 9 44 31 AM](https://github.com/user-attachments/assets/a365311b-6600-4aad-a5fa-863cc04f15d0)
+
+### 2. Real-Time Stock/Crypto Input
+Displays a dynamic, D3.js-powered chart of historical price data based on user-entered stock or crypto tickers.
+![Screenshot 2025-06-05 at 9 48 23 AM](https://github.com/user-attachments/assets/82eb9678-ce22-46cd-a7e8-9d18234e7fb3)
+
+### 3. AI-Generated Financial Insights
+Integrates the OpenAI API to provide general, AI-powered market insights and investment commentary based on user-entered stock or crypto tickers.
+![Screenshot 2025-06-05 at 9 48 59 AM](https://github.com/user-attachments/assets/ecb06539-51f4-44d4-8328-e1e6ac328395)
 
 ## Technology Stack
 
