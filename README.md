@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Stock Crypto Forecaster** is a full-stack web application that predicts future stock and cryptocurrency prices using Facebook Prophet — a powerful time series forecasting library developed by Meta. The app fetches historical market data, displays interactive performance charts, and generates future forecasts to support data-driven financial decisions. It now includes OpenAI API integration for personalized, AI-powered financial advice and insights.
+**Stock Crypto Forecaster** is a full-stack web application for forecasting stock and cryptocurrency prices using state-of-the-art time series modeling. Built with Flask and React, the app visualizes market data and leverages AI insights to support smarter financial decisions.
 
 ## Features
 
@@ -16,16 +16,16 @@
 
 ## Screenshots
 
-### 1. Forecast Visualization
-Generates future stock or crypto price forecasts using Facebook Prophet, rendered with Matplotlib.
+### 🧮 Forecast Visualization
+Forecasts future stock or crypto prices using Facebook Prophet and Matplotlib.
 ![Screenshot 2025-06-05 at 9 44 31 AM](https://github.com/user-attachments/assets/a365311b-6600-4aad-a5fa-863cc04f15d0)
 
-### 2. Real-Time Stock/Crypto Input
-Displays a dynamic, D3.js-powered chart of historical price data based on user-entered stock or crypto tickers.
+### 📈 Real-Time Stock/Crypto Input
+D3.js-powered chart showing 365-day price trends based on user input.
 ![Screenshot 2025-06-05 at 9 48 23 AM](https://github.com/user-attachments/assets/82eb9678-ce22-46cd-a7e8-9d18234e7fb3)
 
-### 3. AI-Generated Financial Insights
-Integrates the OpenAI API to provide general, AI-powered market insights and investment commentary based on user-entered stock or crypto tickers.
+### 🤖 AI-Generated Financial Insights
+Uses OpenAI's API to provide context-aware, AI-generated investment commentary.
 ![Screenshot 2025-06-05 at 9 48 59 AM](https://github.com/user-attachments/assets/ecb06539-51f4-44d4-8328-e1e6ac328395)
 
 ## Technology Stack
