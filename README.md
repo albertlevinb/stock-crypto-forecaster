@@ -2,7 +2,7 @@
 
 ## Overview
 
-**Stock Crypto Forecaster** is a full-stack web application for forecasting stock and cryptocurrency prices using state-of-the-art time series modeling. Built with Flask and React, the app visualizes market data and leverages AI insights to support smarter financial decisions.
+**Stock Crypto Forecaster** is a full-stack web application for forecasting stock and cryptocurrency prices using advanced time series modeling. Built with Flask and React, the app visualizes market data and provides AI-powered insights to support data-driven financial decisions.
 
 ## Features
 
