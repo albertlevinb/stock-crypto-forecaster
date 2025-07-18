@@ -18,7 +18,7 @@
 
 ### 🧮 Forecast Visualization
 Forecasts future stock or crypto prices using Facebook Prophet and Matplotlib.
-<img width="1920" height="927" alt="Screenshot 2025-07-18 at 2 35 26 PM" src="https://github.com/user-attachments/assets/ace98f64-7d90-43c9-9e37-d3950c704238" />
+<img width="1920" height="925" alt="Screenshot 2025-07-18 at 2 47 24 PM" src="https://github.com/user-attachments/assets/9fab80a0-ffaa-4c8b-925e-b348b05543dd" />
 
 ### 📈 Real-Time Stock/Crypto Input
 D3.js-powered chart showing 365-day price trends based on user input.
@@ -26,7 +26,7 @@ D3.js-powered chart showing 365-day price trends based on user input.
 
 ### 🤖 AI-Generated Financial Insights
 Uses OpenAI's API to provide context-aware, AI-generated investment commentary.
-<img width="1920" height="927" alt="Screenshot 2025-07-18 at 2 39 01 PM" src="https://github.com/user-attachments/assets/35e1e9f5-34c5-4a83-9303-379ee81286f7" />
+<img width="1920" height="925" alt="Screenshot 2025-07-18 at 2 47 56 PM" src="https://github.com/user-attachments/assets/6062ba41-84f6-46b8-8789-4029ad8a4d8c" />
 
 ## Technology Stack
 
