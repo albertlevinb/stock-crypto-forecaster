@@ -2,7 +2,7 @@
 
 A full-stack forecasting tool for stocks and crypto combining time-series modeling and AI-powered financial insights.
 
-[Live Demo](albertdev.us/stock-forecast)
+[Live Demo](http://albertdev.us/stock-forecast)
 
 ## Features
 
