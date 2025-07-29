@@ -1,17 +1,17 @@
 # Stock Crypto Forecaster
 
-## Overview
+A full-stack forecasting tool for stocks and crypto combining time-series modeling and AI-powered financial insights.
 
-**Stock Crypto Forecaster** is a full-stack web application for forecasting stock and cryptocurrency prices using advanced time series modeling. Built with Flask and React, the app visualizes market data and provides AI-powered insights to support data-driven financial decisions.
+[Live Demo](albertdev.us/stock-forecast)
 
 ## Features
 
-- Fetches historical stock and crypto price data using `yfinance`  
-- Interactive stock chart with D3.js showing 365-day performance  
-- Forecasts future prices using Facebook Prophet  
-- Cleans and formats time series data for modeling  
-- Visualizes forecasts with Matplotlib  
-- Integrates OpenAI API to provide AI-generated market insights and investment advice  
+- Fetches historical stock and crypto price data using `yfinance`
+- Interactive stock chart with D3.js showing 365-day performance
+- Forecasts future prices using Facebook Prophet
+- Cleans and formats time series data for modeling
+- Visualizes forecasts with Matplotlib
+- Integrates OpenAI API to provide AI-generated market insights and investment advice
 - Responsive frontend with real-time updates and error handling
 
 ## Screenshots
@@ -31,19 +31,19 @@ Uses OpenAI's API to provide context-aware, AI-generated investment commentary.
 ## Technology Stack
 
 ### Backend
-- **Flask** – RESTful API for data, forecasting, and ChatGPT integration  
-- **Facebook Prophet** – time series prediction model  
-- **Yfinance** – historical data retrieval (stocks and crypto)  
-- **OpenAI API** – AI-powered financial analysis and commentary  
-- **Pandas** – data cleaning and transformation  
-- **Axios** – JavaScript library for making RESTful API calls  
-- **Matplotlib** – forecast chart rendering  
+- **Flask** – RESTful API for data, forecasting, and ChatGPT integration
+- **Facebook Prophet** – time series prediction model
+- **Yfinance** – historical data retrieval (stocks and crypto)
+- **OpenAI API** – AI-powered financial analysis and commentary
+- **Pandas** – data cleaning and transformation
+- **Matplotlib** – forecast chart rendering
 
 ### Frontend
-- **React** – interactive user interface  
-- **Material UI** – modern, accessible UI components  
-- **D3.js** – dynamic charting for historical stock/crypto prices  
+- **React** – interactive user interface
+- **Material UI** – modern, accessible UI components
+- **D3.js** – dynamic charting
+- **Axios** – handles API requests between frontend and backend
 
 ### Deployment
-- **NGINX** – Serves the React frontend and proxies API requests to the Flask backend for seamless production deployment  
-- **AWS EC2 Instance** – Hosts the full application stack, including the Flask API, React frontend, and NGINX reverse proxy  
+- **NGINX** – Serves the React frontend and proxies API requests to the Flask backend for seamless production deployment
+- **AWS EC2 Instance** – Hosts the full application stack, including the Flask API, React frontend, and NGINX reverse proxy
