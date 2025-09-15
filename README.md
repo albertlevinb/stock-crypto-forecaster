@@ -1,7 +1,5 @@
 # Stock Crypto Forecaster
 
-[Live Demo](http://albertdev.us/stock-forecast)
-
 A full-stack forecasting tool for stocks and crypto combining time-series modeling and AI-powered financial insights.
 
 ## Features
